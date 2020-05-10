@@ -12,7 +12,7 @@ class Game(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=100)
-    games = models.ManyToManyField(Game)
+    games = models.ManyToManyField(Game, related_name="players")
 
     class Meta:
         ordering = ['name']

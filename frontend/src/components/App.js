@@ -36,9 +36,15 @@ class App extends Component {
             <ul>
                 {this.state.data.map(game => {
                     return (
-                        <li key={game.id}>
-                            {game.type}
-                        </li>
+                        <h3 key={'game_'+game.id}>
+                            {game.id}. {game.type}
+                            <ul>
+                            {game.players.map(player =>
+                                <li key={'player_'+player.id}>
+                                    {player.name}
+                                </li>)}
+                            </ul>
+                        </h3>
                     );
                 })}
             </ul>

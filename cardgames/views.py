@@ -1,5 +1,5 @@
-from .models import Game
-from .serializers import GameSerializer
+from .models import Game, Player
+from .serializers import GameSerializer, PlayerSerializer
 from django.shortcuts import render
 from rest_framework import generics
 
@@ -7,3 +7,7 @@ from rest_framework import generics
 class GameCreate(generics.ListCreateAPIView):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
+
+class PlayerCreate(generics.ListCreateAPIView):
+    queryset = Player.objects.all()
+    serializer_class = PlayerSerializer
